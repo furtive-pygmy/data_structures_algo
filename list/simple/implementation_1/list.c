@@ -14,7 +14,7 @@ List *create_list()
 void add(List *list, int v)
 {
     Node *node = create_node(v);
-    if (list->head == NULL) {
+    if (list_is_empty(list)) {
         list->head = node;
     } else {
         node->next = list->head;
