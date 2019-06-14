@@ -4,8 +4,10 @@
 Node *create_node(int v)
 {
     Node *node = (Node*)malloc(sizeof(Node));
-    node->val = v;
-    node->next = NULL;
+    if (node != NULL) {
+        node->val = v;
+        node->next = NULL;
+    }
 
     return node;
 }
