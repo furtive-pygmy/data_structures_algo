@@ -11,9 +11,12 @@ List *create_list()
     return list;
 }
 
-void add(List *list, int v)
+int add_element_at_start(List *list, int v)
 {
     Node *node = create_node(v);
+    if (node == NULL) {
+        return -1;
+    }
     if (list_is_empty(list)) {
         list->head = node;
     } else {
@@ -21,4 +24,6 @@ void add(List *list, int v)
         list->head = node;
     }
     list->size++;
+
+    return 0;
 }
