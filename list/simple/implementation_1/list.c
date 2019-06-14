@@ -5,8 +5,10 @@
 List *create_list()
 {
     List *list = (List*)malloc(sizeof(List));
-    list->head = NULL;
-    list->size = 0;
+    if (list != NULL) {
+        list->head = NULL;
+        list->size = 0;
+    }
 
     return list;
 }
@@ -14,7 +16,7 @@ List *create_list()
 int add_element_at_start(List *list, int v)
 {
     Node *node = create_node(v);
-    if (node == NULL) {
+    if (list == NULL || node == NULL) {
         return -1;
     }
     if (list_is_empty(list)) {
