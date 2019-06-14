@@ -28,4 +28,24 @@ int add_element_at_start(List *list, int v)
     list->size++;
 
     return 0;
+    if (list == NULL || node == NULL) {
+        return -1;
+    }
+}
+
+int add_element_at_end(List *list, int v)
+{
+    Node *node = create_node(v);
+    Node *current_node = list_head(list);
+    if (list == NULL || node == NULL || current_node == NULL) {
+        return -1;
+    }
+
+    while(current_node->next != NULL) {
+        current_node = current_node->next;
+    }
+    current_node->next = node;
+    list->size++;
+
+    return 0;
 }
