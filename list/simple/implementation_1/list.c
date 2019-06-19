@@ -49,3 +49,25 @@ int add_element_at_end(List *list, int v)
 
     return 0;
 }
+
+int add_element_after_node(List *list, int v, int index)
+{
+    Node *node = create_node(v);
+    if (list == NULL || node == NULL || index > list_size(list)) {
+        return -1;
+    }
+
+    Node *current = list_head(list);
+    int counter = 1;
+    while (counter <= index) {
+        if (counter == index) {
+            node->next = current->next;
+            current->next = node;
+        }
+        current = current->next;
+        counter++;
+    }
+    list->size++;
+    
+    return 0;
+}
