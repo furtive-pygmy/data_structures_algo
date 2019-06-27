@@ -6,4 +6,5 @@ typedef struct Node {
     struct Node *right;
 } Node;
 Node *create_node(int val);
+void add_node(Node *a, Node *b);
 #endif
