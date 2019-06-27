@@ -10,3 +10,20 @@ Node *create_node(int val)
 
 	return node;
 }
+
+void add_node(Node *a, Node *b)
+{
+	if (b->val < a->val) {
+		if (a->left == NULL) {
+			a->left = b;
+		} else {
+			add_node(a->left, b);
+		}
+	} else {
+		if (a->right == NULL) {
+			a->right = b;
+		} else {
+			add_node(a->right, b);
+		}
+	}
+}
