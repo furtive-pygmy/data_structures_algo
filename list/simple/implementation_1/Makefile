@@ -21,4 +21,4 @@ clean:
 	rm -f *.o core
 
 mrproper: clean
-	rm -f list
+	rm -f $(EXEC) 
