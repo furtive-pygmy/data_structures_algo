@@ -4,7 +4,7 @@
 typedef struct Tree{
 	int size;
 	Node *root;
-}
+}Tree;
 void addValue(Tree *t, int val);
 #endif
 
